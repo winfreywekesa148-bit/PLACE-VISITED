@@ -57,9 +57,47 @@ function renderPlace() {
 
 const placeList = Object.values(myPlaceVisited.places);
 
+totalLabel.innerText = placeList.length;
 
+if(placeList.length === 0) {
+    gridDisplay.innerHTML = `
+    <div class="empty-state">
+                <h2>Hope you enjoy *-*</h2>
+                <p>Suggest new places!!</p>
+    </div>`;
+return;
+}
+
+placeList.forEach(place => {
+    let icon = "🌴 🛫";
+    if(place.name === "Mombasa") icon = "🏖";
+    if(place.name === "Nairobi") icon = "🏢";
+    if(place.name === "Nakuru") icon = "🦩";
+    if(place.name === "Naivasha") icon = "🍹";
+    if(place.name === "Kisumu") icon = "🐙";
+    if(place.name === "Lamu") icon = "☕";
+    if(place.name === "Kitale") icon = "🦁";
+
+const card = document.createElement('div');
+        card.Name = 'place-card';
+        card.innerHTML = `
+                <span class="id">ID: ${place.id}</span>
+                <span class="icon">${icon}</span>
+                <h3 class="name">${place.name}</h3>
+                
+                <button class="btn-search" onclick="handleSearch(${place.id})">Search place</button>
+        `;
+    gridDisplay.appendChild(card);
+});
 
 }
+
+const p1 = new Place("Mombasa", "beach", 2020, "Beautiful sunset");
+const p2 = new Place("Kisumu", "Lake-victoria", 2024, "Amazing fish");
+
+myPlaceVisited.addPlace(p1);
+myPlaceVisited.addPlace(p2);
+renderPlace();
 
 
 
