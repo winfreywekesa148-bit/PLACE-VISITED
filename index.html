@@ -14,8 +14,8 @@
             <p>ENJOY!! :D ^-^</p>
 
             <div class="form-group">
-                <label>Place</label>
-                <select name="place" id="place">
+                <label>Name</label>
+                <select name="name" id="name">
                     <option value="Mombasa">Mombasa </option>
                     <option value="Nairobi">Nairobi</option>
                     <option value="Nakuru">Nakuru</option>
@@ -24,6 +24,21 @@
                     <option value="Lamu">Lamu</option>
                     <option value="Kitale">Kitale</option>
                 </select>
+            </div>
+
+            <div class="form-group">
+                <label>Landmark</label>
+                <input type="text" id="landmark" placeholder="e.g. Fort Jesus">
+            </div>
+
+            <div class="form-group">
+                <label>Year</label>
+                <input type="number" id="year" placeholder="e.g. 2023">
+            </div>
+
+            <div class="form-group">
+                <label>Notes</label>
+                <input type="text" id="notes" placeholder="e.g. beautiful sites">
             </div>
 
             <button class="btn-search" onclick="handleSearch()">Search</button>
